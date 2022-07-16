@@ -1,0 +1,12 @@
+.Layout { 
+    min-height: 100vh;
+    height: 100%;
+
+    .ContentWarper { 
+        // width: calc(100% - 500px);
+        // height: 100%;
+        // padding: 60px 0 0 220px;
+        padding-top: 60px;
+        margin-left: var(--sidebar-width);
+    }
+}

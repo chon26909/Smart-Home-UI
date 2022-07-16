@@ -1,0 +1,41 @@
+:root {
+    --primary-color: #287cff;
+    --background: white;
+    --text-primary: black;
+    --text-primary: green;
+    --sidebar-width: 235px;
+    --gradient-purple-blue: linear-gradient(45deg,
+            rgba(103, 21, 205, 1) 0%,
+            rgba(37, 113, 250, 1) 100%);
+    ;
+    --gradient-orange-yellow: linear-gradient(45deg, rgba(252, 79, 27, 1) 0%, rgba(247, 178, 50, 1) 100%);
+    --gradient-green-yellowgreen: linear-gradient(48deg, rgba(9,177,150,1) 0%, rgba(144,200,65,1) 100%);
+    --gradient-pink-orange: linear-gradient(48deg, rgba(239,10,116,1) 0%, rgba(254,100,8,1) 100%);
+}
+
+[data-theme='dark'] {
+    --background: black;
+    --text-primary: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(194, 194, 194);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(164, 164, 164);
+}
