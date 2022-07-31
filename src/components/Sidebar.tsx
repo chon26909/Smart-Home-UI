@@ -1,9 +1,13 @@
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
+import { useAppSelector } from "../hooks";
 import Logo from "./Logo";
 import styles from "./Sidebar.module.scss";
 
 const Sidebar: FC = () => {
+
+  const { sidebar } =  useAppSelector(state => state);
+
   const menu_sidebar = [
     {
       name: "Dashboard",
@@ -28,7 +32,7 @@ const Sidebar: FC = () => {
   ];
 
   return (
-    <div className={styles.Sidebar}>
+    <div className={[styles.Sidebar, sidebar.isActive ? styles.SidebarActive :"" ].join(" ")}>
       <Logo />
       <div className={styles.Menu}>
         {menu_sidebar.map((item: any, index: any) => {

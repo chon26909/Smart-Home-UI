@@ -7,7 +7,7 @@ const temperatureSlice = createSlice({
         control: 0.00
     },
     reducers: {
-        changeTemperature(state, action: PayloadAction<{name:string, value:string}>) {
+        setTemperature(state, action: PayloadAction<{name:string, value:string}>) {
             
             const { name, value } = action.payload;
 
@@ -32,5 +32,5 @@ const temperatureSlice = createSlice({
     }
 })
 
-export const { changeTemperature } = temperatureSlice.actions;
+export const { setTemperature } = temperatureSlice.actions;
 export default temperatureSlice.reducer;

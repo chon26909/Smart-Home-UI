@@ -1,10 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import humidity from './slices/humidity';
+import sidebar from './slices/sidebar';
 import temperature from './slices/temperature';
+import battery from './slices/battery';
+import curcuit from './slices/curcuit';
 
 const reducers = { 
     temperature: temperature,
-    humidity: humidity
+    humidity: humidity,
+    sidebar: sidebar,
+    battery: battery,
+    curcuit: curcuit
 }
 
 const store = configureStore({

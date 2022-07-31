@@ -7,7 +7,7 @@ const humiditySlice = createSlice({
         control: 0.00
     },
     reducers: {
-        changeHumidity(state, action: PayloadAction<{name:string, value:string}>) {
+        setHumidity(state, action: PayloadAction<{name:string, value:string}>) {
             
             const { name, value } = action.payload;
 
@@ -32,5 +32,5 @@ const humiditySlice = createSlice({
     }
 })
 
-export const { changeHumidity } = humiditySlice.actions;
+export const { setHumidity } = humiditySlice.actions;
 export default humiditySlice.reducer;

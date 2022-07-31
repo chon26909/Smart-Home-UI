@@ -13,8 +13,8 @@ const DropdownMenuUser: FC = () => {
             as="button"
             size="lg"
             color="primary"
-            name="Bossza"
-            description="@bozssna"
+            name="HiChon"
+            description="@HiChon"
             src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
           />
         </Dropdown.Trigger>

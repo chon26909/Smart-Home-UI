@@ -2,19 +2,23 @@ import { Container } from "@nextui-org/react";
 import { FC, useEffect } from "react";
 import styled from "styled-components";
 import BatteryCharge from "../components/BatteryCharge";
-import { useAppDispatch, useAppSelector } from "../hooks";
-import { changeTemperature } from "../store/slices/temperature";
+import CurcuitBreacker from "../components/CurcuitBreacker";
+import { useAppSelector } from "../hooks";
+import { setTemperature } from "../store/slices/temperature";
 
 const OverviewWidget = styled.div`
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
   grid-gap: 1rem;
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const WidgetItem = styled.div`
 
   border-radius: 10px;
-  height: 125px;
   color: white;
   padding: 20px 25px;
 
@@ -46,6 +50,17 @@ const WidgetItem = styled.div`
     background: var(--gradient-pink-orange);
 
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 20px;
+
+    .name { 
+      font-size: 1rem;
+    }
+    .value  { 
+      font-size: 1.6rem;
+    }
+  }
 `;
 
 type DataWidget = {
@@ -63,29 +78,18 @@ const Widget = ({ name, value, unit }: DataWidget) => {
 
 const HomePage: FC = () => {
 
-
-  const dispatch = useAppDispatch();
-  const { temperature, humidity } = useAppSelector(store => store);
-
-  useEffect((): any => {
-
-    // socket.on('temperature', ({ name, value }: { name: string, value: string }) => {
-    //   console.log('temperature', name, ' ', value);
-    //   // const dispatch = useAppDispatch()
-    //   dispatch(changeTemperature({ name, value }))
-    // })
-
-  }, []);
+  const { temperature, humidity, battery } = useAppSelector(store => store);
+  
 
   let data: DataWidget[] = [
     {
       name: "Voltage",
-      value: 0.00,
+      value: battery.voltage,
       unit: "V."
     },
     {
       name: "Current",
-      value: 0.00,
+      value: battery.current,
       unit: "A."
     },
     {
@@ -107,8 +111,9 @@ const HomePage: FC = () => {
           return <Widget {...data} key={index} />;
         })}
       </OverviewWidget>
-      <BatteryCharge />
-      <BatteryCharge />
+      <CurcuitBreacker/>
+      {/* <BatteryCharge />
+      <BatteryCharge /> */}
     </Container>
   );
 };
