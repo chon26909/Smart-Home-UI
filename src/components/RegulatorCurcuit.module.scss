@@ -1,0 +1,31 @@
+.Curcuit {
+    margin-top: 2rem;
+
+    .Title {
+        font-size: 22px;
+    }
+
+    .List {
+        margin: 10px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 1rem;
+
+        .Item {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 2px lightgray;
+            .Voltage {
+                font-size: 30px;
+                font-weight: 700;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+
+}
