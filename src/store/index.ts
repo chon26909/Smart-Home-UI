@@ -3,14 +3,14 @@ import humidity from './slices/humidity';
 import sidebar from './slices/sidebar';
 import temperature from './slices/temperature';
 import battery from './slices/battery';
-import curcuit from './slices/curcuit';
+import regulator from './slices/regulator';
 
 const reducers = { 
     temperature: temperature,
     humidity: humidity,
     sidebar: sidebar,
     battery: battery,
-    curcuit: curcuit
+    regulator: regulator
 }
 
 const store = configureStore({
