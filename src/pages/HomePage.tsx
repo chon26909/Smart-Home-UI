@@ -2,7 +2,7 @@ import { Container } from "@nextui-org/react";
 import { FC, useEffect } from "react";
 import styled from "styled-components";
 import BatteryCharge from "../components/BatteryCharge";
-import CurcuitBreacker from "../components/CurcuitBreacker";
+import RegulatorCurcuit from "../components/RegulatorCurcuit";
 import { useAppSelector } from "../hooks";
 import { setTemperature } from "../store/slices/temperature";
 
@@ -111,7 +111,7 @@ const HomePage: FC = () => {
           return <Widget {...data} key={index} />;
         })}
       </OverviewWidget>
-      <CurcuitBreacker/>
+      <RegulatorCurcuit/>
       {/* <BatteryCharge />
       <BatteryCharge /> */}
     </Container>
