@@ -1,10 +1,8 @@
 import { Container } from "@nextui-org/react";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import styled from "styled-components";
-import BatteryCharge from "../components/BatteryCharge";
 import RegulatorCurcuit from "../components/RegulatorCurcuit";
 import { useAppSelector } from "../hooks";
-import { setTemperature } from "../store/slices/temperature";
 
 const OverviewWidget = styled.div`
   display: grid;
@@ -55,10 +53,10 @@ const WidgetItem = styled.div`
     padding: 20px;
 
     .name { 
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
     .value  { 
-      font-size: 1.6rem;
+      font-size: 1.8rem;
     }
   }
 `;

@@ -18,7 +18,7 @@ const RegulatorCurcuit: FC = () => {
                         <div>Regulator {index + 1}</div>
                         <div>
                             <span className={styles.Voltage}>{item.voltage.toFixed(2)}{" "}</span>
-                            <span>v.</span>
+                            <span>V.</span>
                         </div>
                     </div>
                 })
