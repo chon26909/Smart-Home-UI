@@ -1,7 +1,7 @@
 import io, { Socket } from 'socket.io-client';
 import store from '../store';
 import { setBattery } from '../store/slices/battery';
-import { setCurcuit } from '../store/slices/curcuit';
+import { setRegulator } from '../store/slices/regulator';
 import { setHumidity } from '../store/slices/humidity';
 import { setTemperature } from '../store/slices/temperature';
 
@@ -31,11 +31,11 @@ export const initSocket = () => {
         store.dispatch(setBattery(data))
     })
 
-    socket.on('curcuit1', (data: any) => {
+    socket.on('regulator1', (data: any) => {
 
         const { name, value }: { name: string, value: string } = data;
 
-        store.dispatch(setCurcuit({ position: 'curcuit1', name,value}))
+        store.dispatch(setRegulator({ position: 'regulator1', name,value}))
     })
 }
 
